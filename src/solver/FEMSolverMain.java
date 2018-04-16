@@ -14,15 +14,15 @@ public  class  FEMSolverMain {
 		// TODO Auto-generated method stub
 		
 		BufferedReader elementsFileRead = new BufferedReader(
-				new FileReader("C:\\Users\\Tong\\Desktop\\FEM\\1\\elements.txt"));
+				new FileReader(args[0]+"/elements.txt"));
 		BufferedReader nodesFileRead = new BufferedReader(
-				new FileReader("C:\\Users\\Tong\\Desktop\\FEM\\1\\nodes.txt"));//read nodes and element files
+				new FileReader(args[0]+"/nodes.txt"));//read nodes and element files
 		Geometry testGeo=new Geometry(nodesFileRead,elementsFileRead);//build geometry by char stream
 		GMatrix globalMatrix=new GMatrix(testGeo);//build global matrix from geometry
 		BufferedReader stressFile = new BufferedReader(
-				new FileReader("C:\\Users\\Tong\\Desktop\\FEM\\1\\stress.txt"));
+				new FileReader(args[0]+"/stress.txt"));
 		BufferedReader constraintFile = new BufferedReader(
-				new FileReader("C:\\Users\\Tong\\Desktop\\FEM\\1\\constraint.txt"));//read stress and constraint files
+				new FileReader(args[0]+"/constraint.txt"));//read stress and constraint files
 		BoundaryConditions bounCond=new BoundaryConditions(globalMatrix.GetTotalNodes(),stressFile,constraintFile);//build GetGeometry by char stream
 		elementsFileRead.close();
 		elementsFileRead.close();
