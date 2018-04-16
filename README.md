@@ -1,4 +1,4 @@
-# -Finite-Element-Method
+# Finite-Element-Method
 A Simple Case of Finite Element Method using Java
 # 一、简介：
 虽然Java语言在计算性能上远不及C++，但是作为一次使用面向对象方法实现一个小型计算程序的编程实践来说是比较合适的。一方面Java支持彻底的面向对象方法，另一方面Java虚拟机能够自动管理内存，减少了使用C++手动管理内存的复杂性，对于初学者来说比较友好。
@@ -34,6 +34,6 @@ A Simple Case of Finite Element Method using Java
  （4）boundaryConditions(边界条件包)：由边界条件设置类（BoundaryConditions）构成  
 BoundaryConditions类实现了由入读的文件流创建边界条件，构造相应的矩阵并且求解。  
  （5）solver（求解类）：由有限单元法求解主函数构成（FEMSolverMain）。  
-FEMSolverMain类为主程序，该类调用前四个包的功能实现创建几何，构造矩阵、应用边界条件和求解。    
+FEMSolverMain类为主程序，运行时需带节点和边界条件文件的路径参数。该类调用前四个包的功能实现创建几何，构造矩阵、应用边界条件和求解。    
 
  相关类库：为了实现高效的矩阵运算，使用Java第三方类非稀疏矩阵类库（Jama）来实现矩阵的存储、操作和运算。  
