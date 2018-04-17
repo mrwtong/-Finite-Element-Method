@@ -11,10 +11,6 @@ public class GMatrix  implements SetProperties {
 	Matrix globalMatrix;
 	EMatrix[] eMatrixs;
 	/************** Constructor ***********/
-	// default constructor
-	public GMatrix() {
-
-	}
 	// construct from geometry
 	public GMatrix(Geometry geometry) {
 
@@ -48,7 +44,7 @@ public class GMatrix  implements SetProperties {
 	};
 
 	// Subfunction of BuildGMatrix for recursive call
-	public Matrix PlusSubTwoMatrix(int elementnum, int i, int j) {
+	private Matrix PlusSubTwoMatrix(int elementnum, int i, int j) {
 
 		return globalMatrix
 				.getMatrix(eMatrixs[elementnum].GetGlobalNu(i / 2) * 2, eMatrixs[elementnum].GetGlobalNu(i / 2) * 2 + 1,

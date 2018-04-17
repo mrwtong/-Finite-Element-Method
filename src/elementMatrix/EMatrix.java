@@ -21,11 +21,6 @@ public class EMatrix implements SetProperties {
 	double A = 0;
 
 	/************** Constructor ***********/
-	//set element matrix dimension and node number
-	public EMatrix(int dime, int node) {
-		dimension = dime;
-		nodeNu = node;
-	}
 //construct  element matrix from a element
 	public EMatrix(Element oneElement) {
 		this.eMatrixNum = oneElement.elementNum;
@@ -95,7 +90,7 @@ public class EMatrix implements SetProperties {
 
 	}
     // get SubEStiffnessMatrix[i,j]
-	public Matrix SubEStiffnessMatrix(int r, int s) {
+	private Matrix SubEStiffnessMatrix(int r, int s) {
 		subKEMatrix.set(0, 0, b[r] * b[s] + ((1 - nu) / 2) * c[r] * c[s]);
 		subKEMatrix.set(0, 1, nu * b[r] * c[s] + ((1 - nu) / 2) * c[r] * b[s]);
 		subKEMatrix.set(1, 0, nu * c[r] * b[s] + ((1 - nu) / 2) * b[r] * c[s]);

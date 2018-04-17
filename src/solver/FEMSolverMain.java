@@ -12,7 +12,7 @@ public  class  FEMSolverMain {
 
 	public static void main(String[] args) throws IOException  {
 		// TODO Auto-generated method stub
-		
+		//long a = System.currentTimeMillis();
 		BufferedReader elementsFileRead = new BufferedReader(
 				new FileReader(args[0]+"/elements.txt"));
 		BufferedReader nodesFileRead = new BufferedReader(
@@ -33,8 +33,10 @@ public  class  FEMSolverMain {
 		globalMatrix.Print();
 		bounCond.ReplaceMethod(globalMatrix.GetGlobalMatrix());//set boundary condition by ReplaceMethod
 		bounCond.ReplaceMethodSolveOnBC(bounCond.GetBGNGlobalMatrix(globalMatrix.GetGlobalMatrix()));// solve matrix
-		bounCond.GetBGNBNMstress(globalMatrix.GetGlobalMatrix());//set boundary condition by setting big number
-		bounCond.BNMSolveOnBC(bounCond.GetBGNGlobalMatrix(globalMatrix.GetGlobalMatrix()));//solve matrix and print
+		//bounCond.GetBGNBNMstress(globalMatrix.GetGlobalMatrix());//set boundary condition by setting big number
+		//bounCond.BNMSolveOnBC(bounCond.GetBGNGlobalMatrix(globalMatrix.GetGlobalMatrix()));//solve matrix and print
+		// long b = System.currentTimeMillis();
+		 //   System.out.println(b - a);
 	    
 		
 		

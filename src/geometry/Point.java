@@ -11,15 +11,8 @@ public class Point {
 		x = 0.0;
 		y = 0.0;
 		pNum = 0;
-
 	}
-	//constructor from x y point
-	public Point(double x, double y) {
-		this.x = x;
-		this.y = y;
-		pNum = 0;
 
-	}
 	//construct from x£¬y and point number
 	public Point(double x, double y, int pNum) {
 		this.x = x;
