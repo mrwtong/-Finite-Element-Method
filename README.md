@@ -46,7 +46,7 @@ FEMSolverMain类为主程序，运行时需带节点和边界条件文件的路�
          Element(int, Point, Point, Point)；由单元序号和三个节点的引用构造。    
 ### 3、Geometry  
  构造方法：Geometry(BufferedReader, BufferedReader)；由节点文件和单元文件的流构造几何。   
- 类方法：int GetTotalNodeNum()；返回几何的节点数。  
+ 类方法：>int GetTotalNodeNum()；返回几何的节点数。  
  int GetTotalElementNum()；返回几何的单元数。  
  Element GetElement(int)；返回几何中的指定单元。  
 ### 4、EMatrix  
