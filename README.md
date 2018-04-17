@@ -39,39 +39,39 @@ FEMSolverMain类为主程序，运行时需带节点和边界条件文件的路�
  相关类库：为了实现高效的矩阵运算，使用Java第三方类非稀疏矩阵类库（Jama）来实现矩阵的存储、操作和运算。 
  ## 三、程序文档
  ### 1、Point  
-构造方法：* Point(double, double, int)；由点的坐标和序号构造。    
-         * Point(Point)；由引用构造。    
+构造方法：Point(double, double, int)；由点的坐标和序号构造。    
+>>>>Point(Point)；由引用构造。    
 ### 2、Element  
  构造方法：Element(int, Point[])；由单元序号和单元拥有的节点数组引用构造。     
-         Element(int, Point, Point, Point)；由单元序号和三个节点的引用构造。    
+>>>>Element(int, Point, Point, Point)；由单元序号和三个节点的引用构造。    
 ### 3、Geometry  
  构造方法：Geometry(BufferedReader, BufferedReader)；由节点文件和单元文件的流构造几何。    
  类方法：int GetTotalNodeNum()；返回几何的节点数。   
- int GetTotalElementNum()；返回几何的单元数。    
- Element GetElement(int)；返回几何中的指定单元。    
+>>>int GetTotalElementNum()；返回几何的单元数。    
+>>>Element GetElement(int)；返回几何中的指定单元。    
 ### 4、EMatrix  
  构造方法：EMatrix(Element)；由单元构造单元矩阵参数。    
  类方法：void ShapeFunction()；计算形函数相关参数。    
- private Matrix SubEStiffnessMatrix(int, int)；计算制定角标的单元刚度矩阵子矩阵。  
- void EStiffnessMatrix()；计算单元刚度矩阵。  
- void Print()；在屏幕上打印刚度矩阵。  
- int GetInternalNu(int)；根据全局节点号得到单元刚度矩阵内部节点号。  
- int GetGlobalNu(int)；根据刚度矩阵内部节点号得到全局节点号。  
- Matrix GetSubMatrix(int, int)；得到指定下标的刚度矩阵子矩阵。  
+>>>private Matrix SubEStiffnessMatrix(int, int)；计算制定角标的单元刚度矩阵子矩阵。  
+>>>void EStiffnessMatrix()；计算单元刚度矩阵。  
+>>>void Print()；在屏幕上打印刚度矩阵。  
+>>>int GetInternalNu(int)；根据全局节点号得到单元刚度矩阵内部节点号。  
+>>>int GetGlobalNu(int)；根据刚度矩阵内部节点号得到全局节点号。  
+>>>Matrix GetSubMatrix(int, int)；得到指定下标的刚度矩阵子矩阵。  
 ### 5、GMatirx   
  构造方法：GMatrix(Geometry)；根据几何构造全局矩阵相关内部参数。  
  类方法：void BuildEMatrix(double , double , double )；根据E，nu，t创建所有的单元刚度矩阵。
- private Matrix PlusSubTwoMatrix(int elementnum, int i, int j)；将指定的单元刚度矩阵子矩阵加到整体刚度矩阵指定的位置。  
- void BuildGMatrix()；单元遍历法创建整体刚度矩阵。  
- void Print()；在屏幕上打印全局刚度矩阵。  
- int GetTotalNodes()；得到整体刚度矩阵的节点数目。  
- Matrix GetGlobalMatrix()；得到整体刚度矩阵。  
+>>>private Matrix PlusSubTwoMatrix(int elementnum, int i, int j)；将指定的单元刚度矩阵子矩阵加到整体刚度矩阵指定的位置。  
+>>>void BuildGMatrix()；单元遍历法创建整体刚度矩阵。  
+>>>void Print()；在屏幕上打印全局刚度矩阵。  
+>>>int GetTotalNodes()；得到整体刚度矩阵的节点数目。  
+>>>Matrix GetGlobalMatrix()；得到整体刚度矩阵。  
 ### 6、BoundaryConditions  
  构造方法：BoundaryConditions(int,BufferedReader, BufferedReader)；分别由节点总数，应力边界条件文件流，约束边界条件文件流构造边界条件相应
- 参数。   
- Matrix ReplaceMethod(Matrix)；使用置换法在整体刚度矩阵上构造边界条件。  
- void ReplaceMethodSolveOnBC(Matrix)；结合应力边界求解置换法构造的刚度矩阵。  
- Matrix GetBGNBNMstress(Matrix)；使用置大数法在构造应力边界条件。  
- Matrix GetBGNGlobalMatrix(Matrix globalMatrix)；使用置大数法在整体刚度矩阵上构造边界条件。  
- void BNMSolveOnBC(Matrix) 结合应力边界求解制大数法构造的刚度矩阵。  
+ >>>>参数。   
+ 类方法： Matrix ReplaceMethod(Matrix)；使用置换法在整体刚度矩阵上构造边界条件。  
+ >>>void ReplaceMethodSolveOnBC(Matrix)；结合应力边界求解置换法构造的刚度矩阵。  
+ >>>Matrix GetBGNBNMstress(Matrix)；使用置大数法在构造应力边界条件。  
+ >>>Matrix GetBGNGlobalMatrix(Matrix globalMatrix)；使用置大数法在整体刚度矩阵上构造边界条件。  
+ >>>void BNMSolveOnBC(Matrix) 结合应力边界求解制大数法构造的刚度矩阵。  
 
