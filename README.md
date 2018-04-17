@@ -39,8 +39,8 @@ FEMSolverMain类为主程序，运行时需带节点和边界条件文件的路�
  相关类库：为了实现高效的矩阵运算，使用Java第三方类非稀疏矩阵类库（Jama）来实现矩阵的存储、操作和运算。 
  ## 三、程序文档
  ### 1、Point  
-构造方法：Point(double, double, int)；由点的坐标和序号构造。    
-         Point(Point)；由引用构造。    
+构造方法：* Point(double, double, int)；由点的坐标和序号构造。    
+         * Point(Point)；由引用构造。    
 ### 2、Element  
  构造方法：Element(int, Point[])；由单元序号和单元拥有的节点数组引用构造。     
          Element(int, Point, Point, Point)；由单元序号和三个节点的引用构造。    
